@@ -1,11 +1,11 @@
 import "./Hero.css";
-import "../index.css"; 
+import "../index.css";
 
 export const Hero = () => {
   return (
     <div className="hero">
       <div className="content">
-        <p>Hi! I´m Kornilia Adabugday</p>
+        <p>Hi! I´m Kornilia Adabugday, test</p>
         <p>I´m a fullstack developer</p>
         <div className="buttonContainer">
           <button className="aboutBtn">About</button>
