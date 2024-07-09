@@ -38,7 +38,7 @@
   margin: 1rem 0.5rem;
   width: 120px;
   height: 30px;
-  background-image: linear-gradient(to right, #FBA7F3 0%, #8BCFF5  51%, #19F8F8  100%);
+  background-image: var(--linear-color);
   text-transform: uppercase;
   transition: 0.5s;
   box-shadow: 0 0 20px #eee;

@@ -5,7 +5,7 @@ export const Hero = () => {
   return (
     <div className="hero">
       <div className="content">
-        <p>Hi! I´m Kornilia Adabugday, test</p>
+        <p>Hi! I´m Kornilia Adabugday</p>
         <p>I´m a fullstack developer</p>
         <div className="buttonContainer">
           <button className="aboutBtn">About</button>
