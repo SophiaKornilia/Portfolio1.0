@@ -7,28 +7,21 @@
   align-items: flex-end;
 }
 
-.boxContainer .box1 {
+.boxContainer .box1,
+.box2,
+.box3 {
   height: 350px;
   /* width: 50px; */
   flex-grow: 1;
   margin-bottom: 50px;
   background-image: var(--linear-color);
+  transition: 1s;
 }
 
-.boxContainer .box2 {
-  height: 350px;
-  /* width: 50px; */
-  flex-grow: 1;
-  margin-bottom: 50px;
-  background-image: var(--linear-color);
-}
-
-.boxContainer .box3 {
-  height: 350px;
-  /* width: 50px; */
-  flex-grow: 1;
-  margin-bottom: 50px;
-  background-image: var(--linear-color);
+.boxContainer .box1:hover,
+.box2:hover,
+.box3:hover {
+  transform: scale(1.2);
 }
 
 .boxContainer p {
