@@ -1,10 +1,11 @@
 .boxContainer {
   display: flex;
   justify-content: center;
-  height: 100vh;
+  height: 120vh;
   gap: 50px;
   flex-wrap: wrap;
   align-items: flex-end;
+  margin-bottom: 40px;
 }
 
 .boxContainer .box1,
@@ -16,6 +17,7 @@
   margin-bottom: 50px;
   background-image: var(--linear-color);
   transition: 1s;
+  max-width: 300px; 
 }
 
 .boxContainer .box1:hover,
