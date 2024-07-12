@@ -17,7 +17,7 @@
   margin-bottom: 50px;
   background-image: var(--linear-color);
   transition: 1s;
-  max-width: 300px; 
+  max-width: 300px;
 }
 
 .boxContainer .box1:hover,
@@ -56,5 +56,6 @@
   .box2,
   .box3 {
     width: 100%;
+    max-width: 100vh;
   }
 }

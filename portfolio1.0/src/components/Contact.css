@@ -1,0 +1,99 @@
+.contactContainer {
+  display: flex;
+  background: var(--linear-color);
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 80vh;
+}
+
+.separator {
+  width: 0;
+  height: 0;
+  border-right: 79vw solid transparent;
+  border-bottom: 13.9vw solid #fff;
+  margin-top: -13vw;
+}
+/* 
+.contactContainer::after {
+  content: "";
+  position: absolute;
+  top: -150px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--linear-color);
+  transform: skewY(-6deg);
+  transform-origin: top left;
+  z-index: -1;
+} */
+
+.textContainer {
+  width: 30%;
+  margin-right: 100px;
+}
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+form {
+  max-width: 600px;
+  width: 100%;
+  height: 60vh;
+  background: #fff;
+  padding: 15px 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #333;
+  margin: 25px;
+}
+
+form h2 {
+  font-size: 15px;
+  text-align: center;
+}
+
+form .inputBox {
+  margin-top: 20px;
+}
+
+.inputBox .field {
+  width: 100%;
+  height: 30%;
+  background: transparent;
+  border: 2px solid #ddd;
+  outline: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 12px;
+  color: #333;
+  margin-top: 8px;
+}
+
+.inputBox .field.mess {
+  height: 100px;
+  resize: none;
+}
+
+form button {
+  width: 100%;
+  height: 35px;
+  background: var(--linear-color);
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+  margin-top: 25px;
+  transition: 0.5s ease-in-out;
+}
+
+form button h4:hover {
+  transform: scale(1.1);
+}
