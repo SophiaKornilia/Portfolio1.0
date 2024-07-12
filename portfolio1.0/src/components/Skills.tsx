@@ -14,7 +14,7 @@ import { TbSql } from "react-icons/tb";
 
 export const Skills = () => {
   return (
-    <div className="boxContainer">
+    <div className="boxContainer" id="skills">
       <div className="box1">
         <p>Frontend</p>
         <div className="iconContainer">

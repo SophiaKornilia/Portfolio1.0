@@ -22,7 +22,7 @@ export const Navbar = () => {
     <>
       <div className="header">
         <nav className="navbar">
-          <a href="/" className="logo">
+          <a href="#hero" className="logo">
             <img src={Logo} alt="logo" />
           </a>
           <div className="hamburger" onClick={handeClick}>

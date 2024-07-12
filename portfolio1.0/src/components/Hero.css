@@ -17,27 +17,27 @@
 }
 
 .hero .content p:first-child {
-  font-size: 1.9rem;
+  font-size: 2.5rem;
   font-family: "Limelight", sans-serif;
 }
 
 .hero .content p:nth-child(2) {
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 .hero .buttonContainer {
   display: flex;
   margin-top: 30px;
   justify-content: space-between;
-  max-width: 440px;
+  max-width: 600px;
   //background-color: black;
 }
 
 .hero .content button {
   margin: 1rem 0.5rem;
-  width: 120px;
-  height: 30px;
+  width: 180px;
+  height: 40px;
   background-image: var(--linear-color);
   text-transform: uppercase;
   transition: 0.5s;
@@ -46,9 +46,14 @@
   border: none; 
 }
 
-.hero .content button:hover {
+.hero .content button a:hover {
     color: #fff; 
     cursor: pointer; 
+}
+
+.hero button a {
+  text-decoration: none; 
+  color: inherit; 
 }
 
 @media screen and (max-width: 940px) {
