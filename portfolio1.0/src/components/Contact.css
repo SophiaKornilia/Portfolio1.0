@@ -5,28 +5,8 @@
   justify-content: center;
   position: relative;
   height: 80vh;
+  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
 }
-
-.separator {
-  width: 0;
-  height: 0;
-  border-right: 79vw solid transparent;
-  border-bottom: 13.9vw solid #fff;
-  margin-top: -13vw;
-}
-/* 
-.contactContainer::after {
-  content: "";
-  position: absolute;
-  top: -150px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: var(--linear-color);
-  transform: skewY(-6deg);
-  transform-origin: top left;
-  z-index: -1;
-} */
 
 .textContainer {
   width: 30%;

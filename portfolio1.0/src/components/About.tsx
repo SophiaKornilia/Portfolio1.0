@@ -3,10 +3,10 @@ import profilePic from "./images/profilePic.png";
 
 export const About = () => {
   return (
-    <div className="about">
+    <div className="about" id="about">
       <div className="container">
         <div className="textContainer">
-          <p className="welcomeText">Welcome to my corner of the webb!</p>
+          <p className="welcomeText">Welcome to my corner of the webb</p>
           <p className="presentationText">
             I'm Kornilia, a dedicated fullstack development student at
             Medieinstitutet. Always open to new opportunities, feel free to

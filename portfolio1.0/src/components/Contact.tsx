@@ -30,9 +30,8 @@ export const Contact = () => {
   };
 
   return (
-    <div>
-      <div className="separator"></div>
-      <div className="separator"></div>
+    <div id="contact">
+        <div className="separator"></div>
       <div className="contactContainer">
         <div className="textContainer">
           <p>

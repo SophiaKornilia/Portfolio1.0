@@ -2,21 +2,11 @@
   position: relative;
   background-image: var(--linear-color);
   padding: 8rem 1rem 0;
-  min-height: 500px;
+  /* min-height: 500px; */
+  height: 80vh;
   display: flex;
   justify-content: center;
-}
-.about::after {
-  content: "";
-  position: absolute;
-  bottom: -150px;
-  left: 0;
-  width: 100%;
-  height: 400px;
-  background-image: var(--linear-color);
-  transform: skewY(-6deg);
-  transform-origin: top left;
-  z-index: -1;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
 }
 
 .about .container {
@@ -39,7 +29,7 @@
 
 .about .welcomeText {
   font-family: "Limelight", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .about .presentationText {
@@ -60,7 +50,6 @@
   height: 100%;
   object-fit: contain;
   border-radius: 10px;
-  /* box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2); */
 }
 
 @media screen and (max-width: 940px) {

@@ -1,7 +1,7 @@
 .boxContainer {
   display: flex;
   justify-content: center;
-  height: 120vh;
+  height: 100vh;
   gap: 50px;
   flex-wrap: wrap;
   align-items: flex-end;
