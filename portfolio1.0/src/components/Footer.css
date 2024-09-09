@@ -1,7 +1,7 @@
 .footer {
   width: 100%;
   background-color: #fff;
-  padding: 3rem 1rem;
+  padding: 1rem 1rem;
 }
 
 .footer .footerContainer {
@@ -30,5 +30,5 @@
 
 .bottom {
   text-align: center;
-  border-top: 3rem;
+  border-top: 1rem;
 }
