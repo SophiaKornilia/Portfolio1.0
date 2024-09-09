@@ -51,16 +51,19 @@
   transform: scale(1.5);
   opacity: 1;
 }
+.galleryItem:hover .text {
+  display: none;
+}
+
 .galleryItem .text {
   opacity: 1;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #fff;
-  /* font-size: 20px; */
+  color: #000;
   pointer-events: none;
-  z-index: 4;
+  z-index: 0;
   transition: 0.3s ease-in-out;
 }
 
@@ -70,8 +73,6 @@
 .galleryItem:hover .text {
   opacity: 1;
 }
-
-//https://www.youtube.com/watch?v=gvPyJ0rc944 - to do animation with text on the pictures 19min
 
 .w1 {
   grid-column: span 1;
@@ -113,7 +114,12 @@
 
 @media screen and (max-width: 940px) {
   .projectContainer {
+    height: 100vh;
     grid-template-columns: 1fr;
+  }
+
+  .titleContainer {
+    margin-bottom: 20px;
   }
   .w1,
   .w2,

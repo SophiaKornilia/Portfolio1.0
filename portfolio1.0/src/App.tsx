@@ -13,15 +13,24 @@ function App() {
     <>
       <div>
         <Navbar />
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
+        <div className="component hero">
+          <Hero />
+        </div>
+        <div className="component about">
+          <About />
+        </div>
+        <div className="component skills">
+          <Skills />
+        </div>
+        <div className="component projects">
+          <Projects />
+        </div>
+        <div className="component contact">
+          <Contact />
+        </div>
         <Footer />
       </div>
     </>
   );
 }
-
 export default App;
