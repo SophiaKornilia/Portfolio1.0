@@ -1,0 +1,84 @@
+.skillsContainer {
+  height: 100vh;
+}
+
+.boxContainer {
+  display: flex;
+  justify-content: center;
+  /* height: 80vh; */
+  gap: 50px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.skillHeading {
+  margin-top: 100px;
+  margin-bottom: 150px;
+  text-align: left;
+  padding-left: 60px;
+}
+
+.boxContainer .box1,
+.box2,
+.box3 {
+  height: 350px;
+  /* width: 50px; */
+  flex-grow: 1;
+  margin-bottom: 50px;
+  background-image: var(--linear-color);
+  transition: 1s;
+  max-width: 300px;
+}
+
+.boxContainer .box1:hover,
+.box2:hover,
+.box3:hover {
+  transform: scale(1.2);
+}
+
+.boxContainer p {
+  margin-top: 20px;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.skillIcon {
+  font-size: 48px;
+}
+
+@media screen and (max-width: 480px) {
+  .skillsContainer {
+    /* margin-bottom: 300px; */
+  }
+  
+  .boxContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+    height: 100vh;
+  }
+
+  .boxContainer .box1,
+  .box2,
+  .box3 {
+    width: 100%;
+  }
+
+  .galleryItem p{
+    font-size: 14px; 
+  }
+
+  .skillHeading {
+    margin-bottom: 20px;
+  }
+}

@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+@media (max-width: 480px) {
+  .component {
+    margin: 100px 0;
+  }
+
+  .hero {
+    margin: 0px;
+  }
+}

@@ -4,7 +4,8 @@
   --secondary-color: #40e0d0;
   --secondary-dark: #e3d002;
   --ovarlay: rgb(0, 0, 0, 0.7);
-  --white:#ffffff; 
+  --white:#ffffff;
+  --linear-color: linear-gradient(to right, #FBA7F3 0%, #8BCFF5  51%, #19F8F8  100%); 
 }
 
 * {
