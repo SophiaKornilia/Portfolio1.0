@@ -16,7 +16,7 @@ export const Footer = () => {
           headerOffset = 130;
           break;
         case "skills":
-          headerOffset = 300;
+          headerOffset = 0;
           break;
         case "projects":
           headerOffset = 0;

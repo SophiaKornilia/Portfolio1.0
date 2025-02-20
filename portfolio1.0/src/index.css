@@ -4,8 +4,26 @@
   --secondary-color: #40e0d0;
   --secondary-dark: #e3d002;
   --ovarlay: rgb(0, 0, 0, 0.7);
-  --white:#ffffff;
-  --linear-color: linear-gradient(to right, #FBA7F3 0%, #8BCFF5  51%, #19F8F8  100%); 
+  --white: #ffffff;
+  --background-color: #f0f4f8;
+  --background-color-offwhite: #fafcfd;
+  --linear-color: linear-gradient(
+    to right,
+    #fba7f3 0%,
+    #8bcff5 51%,
+    #19f8f8 100%
+  );
+  --linear-color2: linear-gradient(
+    to right,
+    #fba7f3 20%,
+    #8bcff5 81%,
+    #19f8f8 100%
+  );
+  --linear-color-white: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 60%,
+    white 100%
+  );
 }
 
 * {
@@ -16,11 +34,11 @@
 
 body {
   margin: 0;
- // font-family: "Lexend", sans-serif;
-  font-family: Lexend,Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  // font-family: "Lexend", sans-serif;
+  font-family: Lexend, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
+  background-color: var(--background-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

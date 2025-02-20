@@ -1,5 +1,5 @@
 import Logo from "./images/Group 1.png";
-import cv from "../../public/documents/Kornilía Adabugday-cv.pdf";
+import cv from "../components/documents/Kornilía Adabugday - cvPortfolio.pdf";
 import { useState } from "react";
 import {
   FaBars,

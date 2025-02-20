@@ -3,6 +3,7 @@
   height: 100vh;
   width: 100%;
   position: relative;
+  scroll-snap-align: start;
 }
 
 .hero .content {
@@ -17,20 +18,20 @@
 }
 
 .hero .content p:first-child {
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   font-family: "Limelight", sans-serif;
 }
 
 .hero .content p:nth-child(2) {
   font-style: italic;
-  font-size: 1.6rem;
+  font-size: 2rem;
 }
 
 .hero .buttonContainer {
   display: flex;
   margin-top: 30px;
   justify-content: space-between;
-  max-width: 600px;
+  max-width: 630px;
 }
 
 .hero .content button {
@@ -43,6 +44,11 @@
   box-shadow: 0 0 20px #eee;
   border-radius: 5px;
   border: none;
+  font-size: 1rem;
+}
+
+.hero .buttonContainer button:first-child {
+  margin-left: 0;
 }
 
 .hero .content button:hover {

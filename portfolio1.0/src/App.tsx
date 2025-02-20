@@ -8,24 +8,23 @@ import { Projects } from "./components/Projects";
 import { Skills } from "./components/Skills";
 
 function App() {
-  
   return (
     <>
       <div>
         <Navbar />
-        <div className="component hero">
+        <div className="component hero" id="hero">
           <Hero />
         </div>
-        <div className="component about">
+        <div className="component about" id="about">
           <About />
         </div>
-        <div className="component skills">
+        <div className="component skills" id="skills">
           <Skills />
         </div>
-        <div className="component projects">
+        <div className="component projects" id="projects">
           <Projects />
         </div>
-        <div className="component contact">
+        <div className="component contact" id="contact">
           <Contact />
         </div>
         <Footer />
