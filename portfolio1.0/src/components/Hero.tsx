@@ -1,44 +1,90 @@
 import "./Hero.css";
 import "../index.css";
+import { adjustScroll } from "../utils/adjustScroll";
+import { ScrollButtons } from "./ScrollButtons";
+import { useEffect, useState } from "react";
 
 export const Hero = () => {
-  const adjustScroll =
-    (id: string) =>
-    (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-      event.preventDefault();
-      const element = document.getElementById(id);
+  const [currentSection, setCurrentSection] = useState("about");
 
-      let headerOffset: number;
-      const isMobile = window.innerWidth <= 480;
+  useEffect(() => {
+    const sections = document.querySelectorAll(".component");
 
-      switch (id) {
-        case "about":
-          headerOffset = 130;
-          break;
-        case "skills":
-          headerOffset = isMobile ? 200 : 300;
-          break;
-        case "projects":
-          headerOffset = isMobile ? 150 : 0;
-          break;
-        case "contact":
-          headerOffset = isMobile ? 100 : 110;
-          break;
-        default:
-          headerOffset = 0;
-          break;
-      }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setCurrentSection(entry.target.id);
+            break;
+          }
+        }
+      },
+      { threshold: 0.5 }
+    );
 
-      if (element) {
-        const elementPosition =
-          element.getBoundingClientRect().top + window.scrollY;
-        const offsetPosition = elementPosition - headerOffset;
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
-      }
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
     };
+  }, []);
+
+  const getNextSection = () => {
+    switch (currentSection) {
+      case "hero":
+        return "about";
+      case "about":
+        return "skills";
+      case "skills":
+        return "projects";
+      case "projects":
+        return "contact";
+      case "contact":
+        return "hero";
+      default:
+        return "about";
+    }
+  };
+  const getPreviousSection = () => {
+    switch (currentSection) {
+      case "about":
+        return "hero";
+      case "skills":
+        return "about";
+      case "projects":
+        return "skills";
+      case "contact":
+        return "projects";
+      default:
+        return "hero";
+    }
+  };
+
+  const getDirection = ():Array<"up" | "down">  => {
+    return currentSection === "contact"
+    ? ["up"]
+    : currentSection === "hero"
+    ? ["down"]
+    : ["up", "down"];
+  }
+
+  // const getDirection = (): ("up" | "down")[] => {
+  //   switch (currentSection) {
+  //     case "hero":
+  //       return ["down"];
+  //     case "about":
+  //       return ["up", "down"];
+  //     case "skills":
+  //       return ["up", "down"];
+  //     case "projects":
+  //       return ["up", "down"];
+  //     case "contact":
+  //       return ["up"];
+  //     default:
+  //       return ["down"];
+  //   }
+  // };
+
   return (
     <div className="hero" id="hero">
       <div className="content">
@@ -59,6 +105,11 @@ export const Hero = () => {
           </button>
         </div>
       </div>
+      <ScrollButtons
+        scrollTargetUp={getPreviousSection()} 
+        scrollTargetDown={getNextSection()}
+        direction={getDirection()}
+      />
     </div>
   );
 };
