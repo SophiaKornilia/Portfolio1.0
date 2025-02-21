@@ -12,19 +12,19 @@ function App() {
     <>
       <div>
         <Navbar />
-        <div className="component hero" id="hero">
+        <div className="component" id="hero">
           <Hero />
         </div>
-        <div className="component about" id="about">
+        <div className="component" id="about">
           <About />
         </div>
-        <div className="component skills" id="skills">
+        <div className="component" id="skills">
           <Skills />
         </div>
-        <div className="component projects" id="projects">
+        <div className="component" id="projects">
           <Projects />
         </div>
-        <div className="component contact" id="contact">
+        <div className="component" id="contact">
           <Contact />
         </div>
         <Footer />

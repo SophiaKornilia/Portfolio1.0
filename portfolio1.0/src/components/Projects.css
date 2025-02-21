@@ -11,7 +11,7 @@
 
 .titleContainer {
   align-self: flex-start;
-  font-family: "Limelight", sans-serif;
+  /* font-family: "Limelight", sans-serif; */
   font-size: 1.2rem;
   margin-bottom: 40px;
 }

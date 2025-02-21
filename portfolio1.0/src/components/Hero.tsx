@@ -68,23 +68,6 @@ export const Hero = () => {
     : ["up", "down"];
   }
 
-  // const getDirection = (): ("up" | "down")[] => {
-  //   switch (currentSection) {
-  //     case "hero":
-  //       return ["down"];
-  //     case "about":
-  //       return ["up", "down"];
-  //     case "skills":
-  //       return ["up", "down"];
-  //     case "projects":
-  //       return ["up", "down"];
-  //     case "contact":
-  //       return ["up"];
-  //     default:
-  //       return ["down"];
-  //   }
-  // };
-
   return (
     <div className="hero" id="hero">
       <div className="content">
@@ -92,16 +75,16 @@ export const Hero = () => {
         <p>I´m a fullstack developer</p>
         <div className="buttonContainer">
           <button className="aboutBtn" onClick={adjustScroll("about")}>
-            about
+            About
           </button>
           <button className="skillsBtn" onClick={adjustScroll("skills")}>
-            skills
+            Skills
           </button>
           <button className="projectsBtn" onClick={adjustScroll("projects")}>
-            projects
+            Projects
           </button>
           <button className="contactBtn" onClick={adjustScroll("contact")}>
-            contact
+            Contact
           </button>
         </div>
       </div>
