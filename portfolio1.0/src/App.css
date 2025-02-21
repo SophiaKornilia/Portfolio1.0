@@ -42,11 +42,8 @@
 }
 
 @media (max-width: 480px) {
-  .component {
-    margin: 100px 0;
+  #root {
+    padding: 1rem;
   }
-
-  .hero {
-    margin: 0px;
-  }
+  
 }

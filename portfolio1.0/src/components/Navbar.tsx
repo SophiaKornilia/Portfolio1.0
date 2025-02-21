@@ -4,7 +4,6 @@ import { useState } from "react";
 import {
   FaBars,
   FaGithub,
-  FaHome,
   FaLinkedinIn,
   FaTimes,
 } from "react-icons/fa";
@@ -55,11 +54,6 @@ export const Navbar = () => {
             <li className="nav-item">
               <a href={cv} target="_blank" rel="noopener noreferrer">
                 <IoDocumentTextSharp size={30} />
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="/">
-                <FaHome size={30} />
               </a>
             </li>
           </ul>

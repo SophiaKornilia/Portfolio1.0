@@ -7,7 +7,7 @@
   z-index: 1;
   transition: 0.3s ease-in;
   overflow: hidden;
-  background-color: var(--background-color-offwhite);
+  background-color: var(--background-color);
 }
 
 .header .navbar {
@@ -50,7 +50,7 @@
 @media screen and (max-width: 940px) {
   .header {
     max-width: 100%;
-    background-color: #ffffff;
+    background-color: var(--background-color);
   }
 
   .header .navbar {
@@ -66,7 +66,7 @@
     left: -100%;
     top: 90px;
     flex-direction: column;
-    background-color: #ffffff;
+    background-color: var(--background-color);
     width: 100%;
     height: 90vh;
     z-index: 999;
