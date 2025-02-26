@@ -34,22 +34,17 @@ export const Projects = () => {
         <div className="projects-container" ref={scrollRef}>
           {projects.map((project, index) => (
             <div key={index} className="project-card">
-              {/* Bilden */}
               <div className="project-image">
                 <img src={project.img} alt={project.title} />
               </div>
 
-              {/* Kolumn för text + footer */}
               <div className="project-info">
-                {/* Text (rubrik, beskrivning) */}
                 <div className="project-description">
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
                 </div>
 
-                {/* Footer-del med tekniker & länkar */}
                 <div className="project-footer">
-                  {/* Tekniker som badges */}
                   {project.tech && (
                     <ul className="project-tech-list">
                       {project.tech.map((item, i) => (
@@ -59,7 +54,7 @@ export const Projects = () => {
                       ))}
                     </ul>
                   )}
-                  {/* Länkar till GitHub och ev. live */}
+
                   <div className="project-links">
                     {project.github && (
                       <a
