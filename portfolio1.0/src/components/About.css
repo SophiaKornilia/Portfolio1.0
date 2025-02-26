@@ -50,7 +50,7 @@
 }
 
 .about .container .imgContainer:hover {
-  transform: translateY(-5px); 
+  transform: translateY(-5px);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
 }
 
@@ -63,13 +63,14 @@
 }
 
 .imgContainer:hover img {
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
 @media screen and (max-width: 480px) {
   .about {
     min-height: auto;
     padding: 20px 0;
+    position: relative;
   }
 
   .about .container {
@@ -90,7 +91,6 @@
     margin: 20px 0;
     padding: 10px;
     text-align: center;
-    flex: none;
   }
 
   .about .welcomeText {
@@ -104,9 +104,8 @@
     padding: 10px;
     text-align: center;
     flex: none;
-    display: block; 
-    position: relative; 
-    z-index: 1; 
+    display: block;
+    position: relative;
   }
 
   .about .presentationText {
