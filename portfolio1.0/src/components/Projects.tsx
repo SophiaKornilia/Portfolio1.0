@@ -1,118 +1,93 @@
 import "./Projects.css";
-import projectOne from "./images/ContactBook.png";
-import projectTwo from "./images/MovieSearch.png";
-import projectThree from "./images/TodoList.png";
-import projectFour from "./images/Screenshot 2025-01-22 193647.png";
+import { useRef } from "react";
+import sophiaPlanner from "./images/sophiaPlanner.png";
+import test1 from "./images/MovieSearch.png";
 
 export const Projects = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Exempeldata med länkar och teknikstack
+  const projects = [
+    {
+      img: sophiaPlanner,
+      title: "Sophia Planner",
+      description:
+        "En omfattande planeringsapplikation för att hantera uppgifter och scheman med modern design.",
+      github: "https://github.com/ditt-namn/sophia-planner",
+      live: "https://min-app.netlify.app",
+      tech: ["React", "TypeScript", "Node.js"],
+    },
+    {
+      img: test1,
+      title: "Movie Search",
+      description:
+        "En intuitiv film-sökapplikation där användare kan söka och hitta information om filmer.",
+      github: "https://github.com/ditt-namn/movie-search",
+      tech: ["React", "API Fetch", "CSS Modules"],
+    },
+  ];
+
   return (
-    <div className="projectPageContainer" id="projects">
-      <div className="titleContainer">School projects</div>
-      <div className="projectContainer">
-        <div className="galleryContainer w4">
-          <div className="galleryItem">
-            <a
-              href="https://github.com/SophiaKornilia/kunskapskontroll2"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="image">
-                <img src={projectOne} alt="projectOne" />
+    <div className="projects-section" id="projects">
+      <h2 className="projects-title">Mina Projekt</h2>
+      <div className="projects-wrapper">
+        <div className="projects-container" ref={scrollRef}>
+          {projects.map((project, index) => (
+            <div key={index} className="project-card">
+              {/* Bilden */}
+              <div className="project-image">
+                <img src={project.img} alt={project.title} />
               </div>
-              <div className="text">
-                <h3>Project 1</h3>
-                <p>
-                  Ett responsivt webbutseende projekt som använder flexbox och
-                  CSS Grid för att skapa en dynamisk layout som anpassar sig
-                  till olika skärmstorlekar.
-                </p>
+
+              {/* Kolumn för text + footer */}
+              <div className="project-info">
+                {/* Text (rubrik, beskrivning) */}
+                <div className="project-description">
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+                </div>
+
+                {/* Footer-del med tekniker & länkar */}
+                <div className="project-footer">
+                  {/* Tekniker som badges */}
+                  {project.tech && (
+                    <ul className="project-tech-list">
+                      {project.tech.map((item, i) => (
+                        <li key={i} className="tech-badge">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {/* Länkar till GitHub och ev. live */}
+                  <div className="project-links">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link-button"
+                      >
+                        GitHub
+                      </a>
+                    )}
+                    {project.live && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link-button live"
+                      >
+                        Live
+                      </a>
+                    )}
+                  </div>
+                </div>
               </div>
-            </a>
-          </div>
-        </div>
-        <div className="galleryContainer w2">
-          <div className="galleryItem">
-            <a
-              href="https://github.com/maijanp/blomsterhornan"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="image">
-                <img src={projectTwo} alt="projectTwo" />
-              </div>
-              <div className="text">
-                {" "}
-                <h3>Project 2</h3>
-                <p>
-                  Ett projekt som använder flexbox och CSS Grid för en responsiv
-                  webbdesign.
-                </p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div className="galleryContainer w2">
-          <div className="galleryItem">
-            <a
-              href="https://github.com/Medieinstitutet/the-todos-SophiaKornelia"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="image">
-                <img src={projectThree} alt="projectThree" />
-              </div>
-              <div className="text">
-                {" "}
-                <h3>Project 3</h3>
-                <p>
-                  Ett projekt som använder flexbox och CSS Grid för en responsiv
-                  webbdesign.
-                </p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div className="galleryContainer w4">
-          <div className="galleryItem">
-            <a
-              href="https://github.com/SophiaKornilia/kunskapskontroll3"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="image">
-                <img src={projectFour} alt="projectFour" />
-              </div>
-              <div className="text">
-                {" "}
-                <h3>Newsletter service</h3>
-                <p>
-                  Ett SaaS-projekt där kunder kan hantera sina e-postlistor och
-                  skapa nyhetsbrev, medan prenumeranter enkelt kan börja eller
-                  avsluta sina prenumerationer. Projektet är byggt med PHP och
-                  MySQL, och inkluderar funktioner som lösenordsåterställning
-                  via e-post, rollerbaserad navigering och användarhantering
-                </p>
-              </div>
-            </a>
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
-    // <div className="projectPageContainer">
-    //   <div className="projectContainer">
-    //     <div className="projectBox1">
-    //       <img src={projectOne} alt="projectOne" />
-    //     </div>
-    //     <div className="projectBox2">
-    //       <img src={projectTwo} alt="projectTwo" />
-    //     </div>
-    //     <div className="projectBox3">
-    //       <img src={projectThree} alt="projectThree" />
-    //     </div>
-    //     <div className="projectBox4">
-    //       <img src={projectFour} alt="projectFour" />
-    //     </div>
-    //   </div>
-    // </div>
   );
 };
