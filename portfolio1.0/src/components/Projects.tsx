@@ -1,43 +1,49 @@
 import "./Projects.css";
 import { useRef } from "react";
 import sophiaPlanner from "./images/sophiaPlanner.png";
-import test1 from "./images/MovieSearch.png";
 
 export const Projects = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Exempeldata med länkar och teknikstack
   const projects = [
     {
       img: sophiaPlanner,
       title: "Sophia Planner",
       description:
-        "En omfattande planeringsapplikation för att hantera uppgifter och scheman med modern design.",
-      github: "https://github.com/ditt-namn/sophia-planner",
-      live: "https://min-app.netlify.app",
-      tech: ["React", "TypeScript", "Node.js"],
-    },
-    {
-      img: test1,
-      title: "Movie Search",
-      description:
-        "En intuitiv film-sökapplikation där användare kan söka och hitta information om filmer.",
-      github: "https://github.com/ditt-namn/movie-search",
-      tech: ["React", "API Fetch", "CSS Modules"],
+        "A tool for special educators and teachers to create individualized plans. The project is built with a modern tech stack and is easy to run in production.",
+      github: "https://github.com/SophiaKornilia/sophiaPlanner",
+      live: "https://sophiaplanner.vercel.app/",
+      tech: [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "Express",
+        "Firebase",
+        "Google cloud Scheduler",
+      ],
+      isWIP: true,
     },
   ];
 
   return (
     <div className="projects-section" id="projects">
-      <h2 className="projects-title">Mina Projekt</h2>
+      <h2 className="projects-title">My projects</h2>
       <div className="projects-wrapper">
         <div className="projects-container" ref={scrollRef}>
           {projects.map((project, index) => (
             <div key={index} className="project-card">
-              <div className="project-image">
-                <img src={project.img} alt={project.title} />
+              <div
+                className="project-image-container"
+                style={{ position: "relative" }}
+              >
+                {project.isWIP && (
+                  <div className="project-overlay">Work in progress</div>
+                )}
+                <div className="project-image">
+                  <img src={project.img} alt={project.title} />
+                </div>
               </div>
-
               <div className="project-info">
                 <div className="project-description">
                   <h3>{project.title}</h3>
