@@ -3,9 +3,11 @@ import "../index.css";
 import { adjustScroll } from "../utils/adjustScroll";
 import { ScrollButtons } from "./ScrollButtons";
 import { useEffect, useState } from "react";
+import useIsMobile from "../assets/hooks/useIsMobile";
 
 export const Hero = () => {
   const [currentSection, setCurrentSection] = useState("about");
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const sections = document.querySelectorAll(".component");
@@ -60,13 +62,13 @@ export const Hero = () => {
     }
   };
 
-  const getDirection = ():Array<"up" | "down">  => {
+  const getDirection = (): Array<"up" | "down"> => {
     return currentSection === "contact"
-    ? ["up"]
-    : currentSection === "hero"
-    ? ["down"]
-    : ["up", "down"];
-  }
+      ? ["up"]
+      : currentSection === "hero"
+      ? ["down"]
+      : ["up", "down"];
+  };
 
   return (
     <div className="hero" id="hero">
@@ -88,11 +90,13 @@ export const Hero = () => {
           </button>
         </div>
       </div>
-      <ScrollButtons
-        scrollTargetUp={getPreviousSection()} 
-        scrollTargetDown={getNextSection()}
-        direction={getDirection()}
-      />
+      {!isMobile && (
+        <ScrollButtons
+          scrollTargetUp={getPreviousSection()}
+          scrollTargetDown={getNextSection()}
+          direction={getDirection()}
+        />
+      )}
     </div>
   );
 };

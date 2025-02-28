@@ -16,15 +16,13 @@ export const Skills = () => {
   return (
     <div className="projects-section" id="projects">
       <div className="skillsContainer">
-        <div className="titleContainer">
-          <div className="skillHeading">
-            <h2 className="projects-title">Skills</h2>
-            <p className="skillsDescription">
-              Technologies and tools I use in my development work.
-            </p>
-          </div>
+        <div className="skillHeading titleContainer">
+          <h2 className="projects-title">Skills</h2>
+          <p className="skillsDescription">
+            Technologies and tools I use in my development work.
+          </p>
         </div>
-        <div className="boxContainer" id="skills">
+        <div className="boxContainer">
           <div className="skillContainer">
             <div className="skillIcon">
               <IoLogoJavascript />
