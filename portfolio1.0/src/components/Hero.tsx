@@ -1,14 +1,13 @@
 import "./Hero.css";
 import "../index.css";
 import { adjustScroll } from "../utils/adjustScroll";
-// import { ScrollButtons } from "./ScrollButtons";
 import { useEffect, useState } from "react";
-// import useIsMobile from "../assets/hooks/useIsMobile";
 import { TypeWriter } from "../utils/TypeWriter";
 
 export const Hero = () => {
   const [currentSection, setCurrentSection] = useState("about");
-  // const isMobile = useIsMobile();
+ console.log(currentSection);
+ 
 
   useEffect(() => {
     const sections = document.querySelectorAll(".component");
@@ -31,6 +30,7 @@ export const Hero = () => {
       sections.forEach((section) => observer.unobserve(section));
     };
   }, []);
+
 
   return (
     <div className="hero" id="hero">
