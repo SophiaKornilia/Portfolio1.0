@@ -1,85 +1,42 @@
+#skills {
+  margin-bottom: 20px;
+}
+
 .skillsContainer {
-  height: 100vh;
+  height: auto;
+}
+
+.skillHeading {
+  margin-bottom: 1.5rem;
+  text-align: left;
+  color: #333;
+}
+
+.skillsDescription {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  text-decoration: none;
+  margin-left: 2rem;
 }
 
 .boxContainer {
   display: flex;
-  justify-content: center;
-  gap: 60px;
-  flex-wrap: no-wrap;
-  align-items: flex-end;
-  margin-bottom: 40px;
-}
-
-.skillHeading {
-  margin-bottom: 40px;
-  text-align: left;
-  padding-left: 60px;
-  font-size: 1.4rem;
-}
- .shillHeading h2 {
-  text-decoration: underline;
- }
-.skillsDescription {
-  font-size: 1rem;
-  margin-top: 0.5rem;
-  text-decoration: none; 
-}
-
-.skillTextContainer {
-  background-image: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0) 50%,
-      rgba(255, 255, 255, 1) 100%
-    ),
-    var(--linear-color2);
-  background-blend-mode: normal;
-  height: 35%;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-.boxContainer .box1,
-.boxContainer .box2,
-.boxContainer .box3 {
-  height: 400px;
-  flex-grow: 1;
-  margin-bottom: 50px;
-  background-color: rgba(255, 255, 255, 0.9);  
-  transition: all 0.3s ease; 
-  max-width: 350px;
-  border-radius: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.box1:hover,
-.box2:hover,
-.box3:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.boxContainer .skillIcon:hover {
-  transform: scale(1.3);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-
-.boxContainer h4 {
-  padding-top: 20px;
-  font-size: 1.5rem;
-}
-.boxContainer p {
-  margin: 5px 10px;
-  font-size: 1rem;
-  padding: 0 0.8rem; 
-}
-
-.iconContainer {
-  display: flex;
-  justify-content: space-around;
+  flex-direction: row;
   flex-wrap: wrap;
-  gap: 10px;
+  justify-content: flex-start;
+  gap: 20px;
+  margin: 60px 20px 20px 20px;
+  padding-left: 10px;
+}
+
+.skillContainer {
+  position: relative;
+  width: 200px;
+  margin: 10px 0;
+}
+
+.skillLabel:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .skillIcon {
@@ -87,7 +44,6 @@
   width: 50px;
   font-size: 24px;
   padding: 6px;
-  margin: 10px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -95,96 +51,47 @@
   background: linear-gradient(to right, #fba7f3, #8bcff5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
+  z-index: 2;
   position: absolute;
+  left: 0;
+}
+
+.skillLabel {
+  background: var(--background-color-offwhite);
+  height: 50px;
+  min-width: 150px;
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  padding-left: 60px;
+  padding-right: 10px;
   z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: black transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 480px) {
-  .skillsContainer {
-    height: auto;
-    padding: 40px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  #projects {
+    position:relative; 
   }
-
+  
   .boxContainer {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
-    margin: 0;
-    height: auto;
-    width: 100%;
+    margin: 2px;
+    gap: 2px;
   }
 
-  .boxContainer .box1,
-  .boxContainer .box2,
-  .boxContainer .box3 {
-    height: auto;
-    min-height: 350px;
-    width: 85%;
-    margin: 0;
-    padding-bottom: 20px;
-  }
-
-  .skillHeading {
-    margin-bottom: 30px;
-    padding-left: 30px;
-    font-size: 1rem;
-  }
-
-  .iconContainer {
-    padding: 10px;
-    gap: 5px;
+  .skillContainer {
+    width: 95%;
   }
 
   .skillIcon {
     height: 40px;
     width: 40px;
     font-size: 20px;
-    margin: 5px 10px;
-  }
-
-  .tooltip .tooltiptext {
-    width: 100px;
-    font-size: 0.9rem;
+    left: 2%;
+    top: 10%;
   }
 }

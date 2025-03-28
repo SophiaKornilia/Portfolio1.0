@@ -3,9 +3,12 @@ import "../index.css";
 import { adjustScroll } from "../utils/adjustScroll";
 import { ScrollButtons } from "./ScrollButtons";
 import { useEffect, useState } from "react";
+import useIsMobile from "../assets/hooks/useIsMobile";
+import { TypeWriter } from "../utils/TypeWriter";
 
 export const Hero = () => {
   const [currentSection, setCurrentSection] = useState("about");
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const sections = document.querySelectorAll(".component");
@@ -60,19 +63,24 @@ export const Hero = () => {
     }
   };
 
-  const getDirection = ():Array<"up" | "down">  => {
+  const getDirection = (): Array<"up" | "down"> => {
     return currentSection === "contact"
-    ? ["up"]
-    : currentSection === "hero"
-    ? ["down"]
-    : ["up", "down"];
-  }
+      ? ["up"]
+      : currentSection === "hero"
+      ? ["down"]
+      : ["up", "down"];
+  };
 
   return (
     <div className="hero" id="hero">
       <div className="content">
-        <p>Hi! I´m Kornilia Adabugday</p>
-        <p>I´m a fullstack developer</p>
+        <p>
+          <TypeWriter text="Hi! I´m Kornilia Adabugday"/>
+        </p>
+        <p>
+          <TypeWriter text="I´m a fullstack developer"/>
+        </p>
+
         <div className="buttonContainer">
           <button className="aboutBtn" onClick={adjustScroll("about")}>
             About
@@ -88,11 +96,13 @@ export const Hero = () => {
           </button>
         </div>
       </div>
-      <ScrollButtons
-        scrollTargetUp={getPreviousSection()} 
-        scrollTargetDown={getNextSection()}
-        direction={getDirection()}
-      />
+      {!isMobile && (
+        <ScrollButtons
+          scrollTargetUp={getPreviousSection()}
+          scrollTargetDown={getNextSection()}
+          direction={getDirection()}
+        />
+      )}
     </div>
   );
 };

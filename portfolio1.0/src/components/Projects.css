@@ -1,16 +1,14 @@
-/*******************************************************
- * 1. Grundläggande styling
- *******************************************************/
-
- .projects-section {
+.projects-section {
   padding: 2rem;
+  min-height: 80vh;
 }
 
 .projects-title {
-  font-size: 1.6rem;
-  margin-bottom: 1.5rem;
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
   text-align: left;
   color: #333;
+  margin-left: 2rem;
 }
 
 .projects-wrapper {
@@ -24,21 +22,20 @@
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   padding: 1rem;
+  margin-top: 2rem;
 }
 
-/*******************************************************
-   * 2. Projektkorten
-   *******************************************************/
 .project-card {
   display: flex;
-  align-items: stretch; /* Sträck bilden + info till samma höjd */
-  width: 500px; /* Justera efter smak */
+  flex-direction: column;
+  align-items: stretch;
+  width: 500px;
   flex-shrink: 0;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   scroll-snap-align: start;
-  overflow: hidden; /* Så footern/bakgrunden inte sticker ut */
+  overflow: hidden;
   transition: transform 0.3s ease;
 }
 
@@ -46,38 +43,50 @@
   transform: scale(1.02);
 }
 
-/* Bilden till vänster */
-.project-image {
+.project-image-container {
+  position: relative;
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 2;
+  font-size: 1rem;
+}
+
+/* .project-image {
   position: relative;
   width: 200px;
-  height: auto; /* Höjden följer innehållet om du vill */
-  flex-shrink: 0;
+  height: 100%;
   overflow: hidden;
   padding: 10px;
   border-radius: 8px;
-}
-
-/* Om du vill ha en gradientram runt bilden */
-/* .project-image::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit; 
-  background: linear-gradient(90deg, #fba7f3, #8bcff5, #19f8f8);
-  z-index: -1;
 } */
+
+.project-image {
+  width: 100%;
+  aspect-ratio: 16 / 7; /* passar bättre för breda skärmdumpar */
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  padding: 10px;
+}
 
 .project-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top; 
+  display: block;
   border-radius: inherit;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
-/*******************************************************
-   * 3. Info-kolumn: text + footer
-   *******************************************************/
 .project-info {
   display: flex;
   flex-direction: column;
@@ -87,7 +96,6 @@
 .project-description {
   flex: 1;
   padding: 1rem;
-  /* Här ligger rubrik och beskrivning */
 }
 
 .project-description h3 {
@@ -101,47 +109,34 @@
   line-height: 1.4;
 }
 
-/*******************************************************
-   * 4. Footer med halvgenomskinlig bakgrund
-   *******************************************************/
 .project-footer {
-  /* Lägg footern längst ner i kolumnen */
   margin-top: auto;
-
-  /* Exempel: halvt genomskinlig variant av din linear-color */
+  min-height: 140px;
   background: linear-gradient(
     90deg,
     rgba(251, 167, 243, 0.7),
-    /* #fba7f3, men ~90% opacitet */ rgba(139, 207, 245, 0.7),
-    /* #8bcff5 */ rgba(25, 248, 248, 0.7) /* #19f8f8 */
+    rgba(139, 207, 245, 0.7),
+    rgba(25, 248, 248, 0.7)
   );
 
-  /* Alternativt:
-       background: var(--linear-color);
-       opacity: 0.9; 
-       men då blir även texten halvgenomskinlig.
-       Bättre att använda RGBA direkt i gradienten. 
-    */
   color: #fff;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   padding: 1rem;
-  border-radius: 0 0 8px 0; /* ex. rundar nedre högerhörnet */
+  border-radius: 0 0 8px 0;
 }
 
-/* Tekniklista (badges) */
 .project-tech-list {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
   margin: 0;
-  margin-bottom: 0.5rem; /* Lite luft under */
+  margin-bottom: 0.5rem;
   padding: 0;
   list-style: none;
-  /* color: red; */
 }
 
 .tech-badge {
-  background-color: rgba(255, 255, 255, 0.3); /* lite transparent vit */
+  background-color: rgba(255, 255, 255, 0.3);
   color: #fff;
   padding: 0.25rem 0.5rem;
   font-size: 0.85rem;
@@ -149,7 +144,6 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Länkar (GitHub, Live) */
 .project-links {
   display: flex;
   gap: 0.5rem;
@@ -163,7 +157,7 @@
 
   background-color: rgba(85, 83, 83, 0.5);
   color: #fff;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   transition: background 0.2s ease;
 }
 
@@ -171,7 +165,6 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* Exempel: om du vill ha en annan färg på "Live" */
 .project-link-button.live {
   background-color: rgba(145, 145, 145, 0.2);
 }
@@ -180,27 +173,24 @@
 }
 
 @media (max-width: 768px) {
-    .projects-section {
-        padding:2rem 1rem;
-      }
-    /* Gör kortet smalare än skärmen (t.ex. 85% av bredden) */
-    .project-card {
-      width: 70vw;
-      flex-direction: column; /* Lägg innehållet i kolumn */
-    }
-  
-    /* Låt bilden ta full bredd när innehållet staplas i kolumn */
-    .project-image {
-      width: 100%;
-      /* Du kan sätta en fast höjd här, t.ex: */
-      height: 160px;
-    }
-  
-    /* Justera ev. padding för att spara utrymme */
-    .project-description,
-    .project-footer {
-      padding: 1rem;
-      min-height: 120px;
-    }
+  .projects-section {
+    padding: 2rem 1rem;
+    height: auto;
   }
-  
+
+  .project-card {
+    width: 70vw;
+    /* flex-direction: column; */
+  }
+
+  .project-image {
+    width: 100%;
+    height: 160px;
+  }
+
+  .project-description,
+  .project-footer {
+    padding: 1rem;
+    min-height: 200px;
+  }
+}

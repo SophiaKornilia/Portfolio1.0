@@ -31,7 +31,7 @@ export const Contact = () => {
 
   return (
     <div id="contact">
-        <div className="separator"></div>
+      <div className="separator"></div>
       <div className="contactContainer">
         <div className="textContainer">
           <p>
@@ -44,7 +44,6 @@ export const Contact = () => {
             <form onSubmit={onSubmit}>
               <h2>Contact form</h2>
               <div className="inputBox">
-                <label>Full name</label>
                 <input
                   type="text"
                   className="field"
@@ -54,7 +53,6 @@ export const Contact = () => {
                 />
               </div>
               <div className="inputBox">
-                <label>Email Address</label>
                 <input
                   type="email"
                   className="field"
@@ -64,7 +62,6 @@ export const Contact = () => {
                 />
               </div>
               <div className="inputBox">
-                <label>Your message</label>
                 <textarea
                   name="message"
                   className="field mess"
