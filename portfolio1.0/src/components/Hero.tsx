@@ -4,6 +4,7 @@ import { adjustScroll } from "../utils/adjustScroll";
 import { ScrollButtons } from "./ScrollButtons";
 import { useEffect, useState } from "react";
 import useIsMobile from "../assets/hooks/useIsMobile";
+import { TypeWriter } from "../utils/TypeWriter";
 
 export const Hero = () => {
   const [currentSection, setCurrentSection] = useState("about");
@@ -73,8 +74,13 @@ export const Hero = () => {
   return (
     <div className="hero" id="hero">
       <div className="content">
-        <p>Hi! I´m Kornilia Adabugday</p>
-        <p>I´m a fullstack developer</p>
+        <p>
+          <TypeWriter text="Hi! I´m Kornilia Adabugday"/>
+        </p>
+        <p>
+          <TypeWriter text="I´m a fullstack developer"/>
+        </p>
+
         <div className="buttonContainer">
           <button className="aboutBtn" onClick={adjustScroll("about")}>
             About

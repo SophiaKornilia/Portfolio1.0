@@ -11,13 +11,13 @@ export const adjustScroll =
         headerOffset = 130;
         break;
       case "skills":
-        headerOffset = isMobile ? 200 : 160;
+        headerOffset = isMobile ? 110 : 160;
         break;
       case "projects":
-        headerOffset = isMobile ? 150 : -440;
+        headerOffset = isMobile ? -1000 : -440;
         break;
       case "contact":
-        headerOffset = isMobile ? 100 : -10;
+        headerOffset = isMobile ? 80 : -10;
         break;
       default:
         headerOffset = 0;
