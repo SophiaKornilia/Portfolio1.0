@@ -1,14 +1,14 @@
 import "./Hero.css";
 import "../index.css";
 import { adjustScroll } from "../utils/adjustScroll";
-import { ScrollButtons } from "./ScrollButtons";
+// import { ScrollButtons } from "./ScrollButtons";
 import { useEffect, useState } from "react";
-import useIsMobile from "../assets/hooks/useIsMobile";
+// import useIsMobile from "../assets/hooks/useIsMobile";
 import { TypeWriter } from "../utils/TypeWriter";
 
 export const Hero = () => {
   const [currentSection, setCurrentSection] = useState("about");
-  const isMobile = useIsMobile();
+  // const isMobile = useIsMobile();
 
   useEffect(() => {
     const sections = document.querySelectorAll(".component");
@@ -32,53 +32,14 @@ export const Hero = () => {
     };
   }, []);
 
-  const getNextSection = () => {
-    switch (currentSection) {
-      case "hero":
-        return "about";
-      case "about":
-        return "skills";
-      case "skills":
-        return "projects";
-      case "projects":
-        return "contact";
-      case "contact":
-        return "hero";
-      default:
-        return "about";
-    }
-  };
-  const getPreviousSection = () => {
-    switch (currentSection) {
-      case "about":
-        return "hero";
-      case "skills":
-        return "about";
-      case "projects":
-        return "skills";
-      case "contact":
-        return "projects";
-      default:
-        return "hero";
-    }
-  };
-
-  const getDirection = (): Array<"up" | "down"> => {
-    return currentSection === "contact"
-      ? ["up"]
-      : currentSection === "hero"
-      ? ["down"]
-      : ["up", "down"];
-  };
-
   return (
     <div className="hero" id="hero">
       <div className="content">
         <p>
-          <TypeWriter text="Hi! I´m Kornilia Adabugday"/>
+          <TypeWriter text="Hi! I´m Kornilia Adabugday" />
         </p>
         <p>
-          <TypeWriter text="I´m a fullstack developer"/>
+          <TypeWriter text="I´m a fullstack developer" />
         </p>
 
         <div className="buttonContainer">
@@ -96,13 +57,6 @@ export const Hero = () => {
           </button>
         </div>
       </div>
-      {!isMobile && (
-        <ScrollButtons
-          scrollTargetUp={getPreviousSection()}
-          scrollTargetDown={getNextSection()}
-          direction={getDirection()}
-        />
-      )}
     </div>
   );
 };
