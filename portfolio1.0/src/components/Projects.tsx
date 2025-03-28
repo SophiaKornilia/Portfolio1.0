@@ -1,6 +1,7 @@
 import "./Projects.css";
 import { useRef } from "react";
 import sophiaPlanner from "./images/sophiaPlanner.png";
+import portfolio from "./images/Screenshot 2025-03-28 203402.png";
 
 export const Projects = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -10,7 +11,7 @@ export const Projects = () => {
       img: sophiaPlanner,
       title: "Sophia Planner",
       description:
-        "A tool for special educators and teachers to create individualized plans. The project is built with a modern tech stack and is easy to run in production.",
+        "A work-in-progress tool designed to help special educators create individualized plans with ease. Built with a modern tech stack and continuously improving as the project evolves.",
       github: "https://github.com/SophiaKornilia/sophiaPlanner",
       live: "https://sophiaplanner.vercel.app/",
       tech: [
@@ -23,6 +24,15 @@ export const Projects = () => {
         "Google cloud Scheduler",
       ],
       isWIP: true,
+    },
+    {
+      img: portfolio,
+      title: "Portfolio",
+      description:
+        "Curious about how this portfolio was built? This repo contains the full code behind the site you're currently viewing.",
+      github: "https://github.com/SophiaKornilia/sophiaPlanner",
+      live: "https://sophiaplanner.vercel.app/",
+      tech: ["React", "TypeScript", "CSS"],
     },
   ];
 
