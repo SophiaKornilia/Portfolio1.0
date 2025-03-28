@@ -30,8 +30,8 @@ export const Projects = () => {
       title: "Portfolio",
       description:
         "Curious about how this portfolio was built? This repo contains the full code behind the site you're currently viewing.",
-      github: "https://github.com/SophiaKornilia/sophiaPlanner",
-      live: "https://sophiaplanner.vercel.app/",
+      github: "https://github.com/SophiaKornilia/Portfolio1.0",
+      live: "https://portfolio1-0-steel.vercel.app/",
       tech: ["React", "TypeScript", "CSS"],
     },
   ];
