@@ -36,6 +36,8 @@ export const Contact = () => {
         <div className="textContainer">
           <p>
             Do you have a new project, job, or internship opportunity for me?
+            <br />
+            <br />
             Feel free to connect.
           </p>
         </div>
