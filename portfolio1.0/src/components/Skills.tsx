@@ -37,6 +37,12 @@ export const Skills = () => {
           </div>
           <div className="skillContainer">
             <div className="skillIcon">
+              <FaReact />
+            </div>
+            <div className="skillLabel">React Native</div>
+          </div>
+          <div className="skillContainer">
+            <div className="skillIcon">
               <FaHtml5 />
             </div>
             <div className="skillLabel">Html</div>
