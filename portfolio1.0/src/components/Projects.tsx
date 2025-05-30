@@ -2,7 +2,7 @@ import "./Projects.css";
 import { useRef } from "react";
 import sophiaPlanner from "./images/sophiaPlanner.png";
 import portfolio from "./images/Screenshot 2025-03-28 203402.png";
-
+import invitationSlider from "./images/invitationSlider.png";
 export const Projects = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -24,6 +24,24 @@ export const Projects = () => {
         "Google cloud Scheduler",
       ],
       isWIP: true,
+    },
+    {
+      img: invitationSlider,
+      title: "Invitation-slider",
+      description:
+        "A fun project I created to send out invitations for my graduation celebration. Currently optimized only for smaller screens (like phones). Try solving the puzzle to unlock the invitation, and then fill out the form.",
+      github: "https://github.com/SophiaKornilia/invitation-slider",
+      live: "https://invitation-slider.vercel.app/",
+      video: "https://youtube.com/shorts/st310BIlWS8",
+      tech: [
+        "React",
+        "TypeScript",
+        "CSS",
+        "Node.js",
+        "Express",
+        "Firebase",
+        "express-rate-limit",
+      ],
     },
     {
       img: portfolio,
@@ -90,6 +108,16 @@ export const Projects = () => {
                         className="project-link-button live"
                       >
                         Live
+                      </a>
+                    )}
+                    {project.video && (
+                      <a
+                        href={project.video}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-link-button live"
+                      >
+                        Video
                       </a>
                     )}
                   </div>
