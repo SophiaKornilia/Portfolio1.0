@@ -1,12 +1,7 @@
 import Logo from "./images/Group 1.png";
-import cv from "../components/documents/Kornilía Adabugday - cvPortfolio.pdf";
+import cv from "../components/documents/Kornilia Adabugday - CV2026.pdf";
 import { useState } from "react";
-import {
-  FaBars,
-  FaGithub,
-  FaLinkedinIn,
-  FaTimes,
-} from "react-icons/fa";
+import { FaBars, FaGithub, FaLinkedinIn, FaTimes } from "react-icons/fa";
 
 import "./Navbar.css";
 import { IoDocumentTextSharp } from "react-icons/io5";
